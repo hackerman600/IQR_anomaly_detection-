@@ -149,6 +149,8 @@ int main(){
     int ascending_colwise_dataset[4][8];
     int corpus[8];
     int corpus_w[8];
+
+    
     for(int c = 1; c < 2; c++){
         for(int r = 0; r < 8; r++){
             corpus[r] = dataset[r][c];
@@ -194,73 +196,3 @@ int main(){
     
     return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*int main() {
-    FILE *filePointer;
-    char line_buffer[10000]; // Adjust the buffer size as needed
-    char delimiter = ','; // CSV delimiter
-    double *storevals[1000000] = {}; //can not store 47.04 mill in 1. 1 mill max on stack
-    int itter = 0; 
-
-    filePointer = fopen("/home/kali/Desktop/machine_learning/neural_networks/from_scratch/cpp_networks/x_train.csv", "r");
-    if (filePointer == NULL) {
-        perror("Error opening file");
-        return 1;
-    }
-
-    while (fgets(line_buffer, sizeof(line_buffer), filePointer) != NULL) {
-        // Tokenize the line based on the delimiter
-        char *token = strtok(line_buffer, ",");
-        while (token != NULL) {
-            // Process each token and store it in storevals
-            if (strlen(token) > 1) {
-                double val = strtod(token,NULL); 
-                //printf("val = %f",val);
-                storevals[itter] = val;
-                itter += 1;
-            }
-
-            if (itter == 999999){
-                printf("999999 = %f\n", storevals[3000]);
-                printf("%d\n", sizeof(storevals));
-                return 0;
-            }
-
-            // Get the next token
-            token = strtok(NULL, ",");
-
-
-        }
-    }
-
-    fclose(filePointer);
-
-    // Print the first value from storevals
-    printf("%.2lf\n", sizeof(storevals));
-  
-
-    return 0;
-}*/
-
-
-
-//import dataset into 2d array from non main function.
-//rearrange data in ascending order. rowwise sum (normalize features row wise.)
-
